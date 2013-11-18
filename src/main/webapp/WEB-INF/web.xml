@@ -23,6 +23,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
+    <!-- RESTful API url <WEBContext>/api/ -->
     <servlet-mapping>
         <servlet-name>appServlet</servlet-name>
         <url-pattern>/api/*</url-pattern>

@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.ysyun</groupId>
-	<artifactId>DashboardTest</artifactId>
+	<groupId>com.mobiconsoft</groupId>
+	<artifactId>SPA_Angular_Spring_Scaffold</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<url>http://maven.apache.org</url>
@@ -91,7 +91,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>DashboardTest</finalName>
+		<finalName>SPA_Angular_Spring_Scaffold</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
