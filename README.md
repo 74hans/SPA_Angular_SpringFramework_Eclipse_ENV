@@ -19,16 +19,18 @@ Pre-Install
 Install
 -------
 
-* git clone [git@github.com:ysyun/SPA_Angular_SpringFramework_Eclipse_ENV.git](git@github.com:ysyun/SPA_Angular_SpringFramework_Eclipse_ENV.git)
-* cd SPA_Angular_SpringFramework_Eclipse_ENV
-* npm install .
-
-
-Make WAR archive file
---------------------
-
+*  $ git clone [git@github.com:ysyun/SPA_Angular_SpringFramework_Eclipse_ENV.git](git@github.com:ysyun/SPA_Angular_SpringFramework_Eclipse_ENV.git)
+*  $ cd SPA_Angular_SpringFramework_Eclipse_ENV
+*  $ npm install .
 *  $ grunt build  (create the public folder which is distributed)
 *  $ mvn clean install (create <ProjectName>.war distributed final file)
+
+
+Post-Install
+------------
+
+* Set "Add Maven Dependencies of Deployment Assembly" in the window of the project properties. 
+* Set Test Server about Tomcat7
 
 
 Advanced Examples
