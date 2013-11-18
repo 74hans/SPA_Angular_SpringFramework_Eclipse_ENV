@@ -29,6 +29,7 @@ Install
 Post-Install
 ------------
 
+* "Import..." in Eclipse -> "Maven / Existing Maven Projects" and then you select the pom.xml of this cloned project -> Building workspace.
 * Set "Add Maven Dependencies of Deployment Assembly" in the window of the project properties. 
 * Set Test Server about Tomcat7
 
@@ -38,14 +39,13 @@ Advanced Examples
 *  [Blog about this usage](http://mobicon.tistory.com/380)
 
 
-Thanks
-------
-
-Special thanks to everybody. 
-
-
 Author
 ------
 writtend by [Yun YoungSik](http://ysyun.github.io). My Blog is [Mobile Convergence](http://mobicon.tistory.com)
 
 Copyleft(c) 2013 All rights reserved by MobiconSoft
+
+
+LICENSE
+-------
+MIT License. Everybody can use this project and commercial.
