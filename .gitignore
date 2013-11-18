@@ -1,5 +1,5 @@
-node_modules
-dist
+node_modules/
+dist/
+target/
+.settings
 .tmp
-.sass-cache
-target
