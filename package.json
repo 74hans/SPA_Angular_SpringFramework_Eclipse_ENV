@@ -1,6 +1,6 @@
 {
-  "name": "solardasbhoard",
-  "version": "0.0.0",
+  "name": "mobiconsoftdasbhoard",
+  "version": "0.0.1",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -42,6 +42,6 @@
     "node": ">=0.8.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "build": "npm install . && grunt build && mvn clean install"
   }
 }
