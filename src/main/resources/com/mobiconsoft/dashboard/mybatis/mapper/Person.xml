@@ -38,7 +38,7 @@ mysql> create table person(
         (#{id}, #{name})
     </insert>
     
-    <update id="updatePerson" parameterType="Person"> <!-- useGeneratedKeys="true" keyProperty="id"> -->
+    <update id="updatePerson" parameterType="Person"> 
         UPDATE 
         person 
         SET
