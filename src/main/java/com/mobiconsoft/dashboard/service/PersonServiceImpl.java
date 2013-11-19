@@ -1,47 +1,57 @@
 package com.mobiconsoft.dashboard.service;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 import org.springframework.stereotype.Service;
 import com.mobiconsoft.dashboard.domain.Person;
 
 @Service
 public class PersonServiceImpl implements PersonService {
 
+	private List<Person> list = new ArrayList();
+	
+	private Person getPerson(int id) {
+		Person person = null;
+		for(Iterator<Person> it = list.iterator() ; it.hasNext(); ) {
+			person = it.next();
+			if(person.getId() == id) {
+				return person;
+			}
+		}
+		return null;
+	}
+	
 	@Override
-	public Person getPersons() {
-		Person person = new Person();
-		person.setId(1);
-		person.setName("youngsik");
-		
-		return person;
+	public List<Person> getPersons() {
+		return list;
 	}
 
 	@Override
 	public Person getById(Integer id) {
-		Person person = new Person();
-		person.setId(id.intValue());
-		person.setName("dowon");
-		
-		return person;
+		return getPerson(id.intValue());
 	}
 
 	@Override
 	public Person save(Person person) {
 		// TODO Auto-generated method stub
-		person.setName("Save-"+person.getName());
-
+		person.setName(person.getName());
+		list.add(person);
+		
 		return person;
 	}
 	
 	@Override
 	public Person update(Person person) {
 		// TODO Auto-generated method stub
-		person.setName("Update-"+person.getName());
+		Person oldPerson = getPerson(person.getId());
+		oldPerson.setName(person.getName());
 
-		return person;
+		return oldPerson;
 	}
 	
 	@Override
 	public void delete(Integer id) {
-		
+		list.remove(getPerson(id.intValue()));
 	}
 }

@@ -11,6 +11,10 @@ angular.module('SolarDasbhoardApp', [
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
+      .when('/resttest', {
+        templateUrl: 'views/resttest.html',
+        controller: 'RestTestCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

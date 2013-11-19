@@ -23,11 +23,24 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
 
-    <!-- RESTful API url <WEBContext>/api/ -->
+    <!-- RESTful API url <WEBContext>/api/v1 or /api/v2 -->
     <servlet-mapping>
         <servlet-name>appServlet</servlet-name>
         <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
+    
+    <!-- <welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list> -->
+
+	<filter>
+		<filter-name>httpMethodFilter</filter-name>
+		<filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>httpMethodFilter</filter-name>
+		<servlet-name>appServlet</servlet-name>
+	</filter-mapping>
    
     <filter>
         <filter-name>charsetFilter</filter-name>
