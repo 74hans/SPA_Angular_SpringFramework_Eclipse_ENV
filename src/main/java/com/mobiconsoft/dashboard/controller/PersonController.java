@@ -1,5 +1,7 @@
 package com.mobiconsoft.dashboard.controller;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +27,7 @@ public class PersonController {
 	// return Person object as json
 	@RequestMapping(value = "/person", method = RequestMethod.GET)
 	@ResponseBody
-	public Person getPersons() {
+	public List<Person> getPersons() {
 		return this.personService.getPersons();
 	}
 	
