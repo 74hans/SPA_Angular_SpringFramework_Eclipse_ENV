@@ -1,7 +1,6 @@
 package com.mobiconsoft.dashboard.controller;
 
 import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +27,7 @@ public class PersonController {
 	@RequestMapping(value = "/person", method = RequestMethod.GET)
 	@ResponseBody
 	public List<Person> getPersons() {
+		logger.info("Select all call: "+ this.personService.getPersons());
 		return this.personService.getPersons();
 	}
 	
@@ -36,7 +36,9 @@ public class PersonController {
 	@RequestMapping(value = "/person/{id}", method = RequestMethod.GET)
 	@ResponseBody
 	public Person getById(@PathVariable Integer id) {
-		return this.personService.getById(id);
+		Person person = this.personService.getById(id);
+		logger.info("Select one call: "+ person.getId() + ", " + person.getName());
+		return person;
 	}
 
 	// this method response to POST request http://localhost:8080/api/v1/person
