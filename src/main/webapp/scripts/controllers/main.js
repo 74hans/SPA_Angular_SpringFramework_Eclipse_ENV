@@ -45,9 +45,9 @@ angular.module('SolarDasbhoardApp')
         });
     };
 
-    $scope.delete = function(person) {
-    	console.log('Delete Person : ', $scope.person);
-        $http.delete(actionUrl + $scope.person.id).success(function () {
+    $scope.delete = function(id) {
+    	console.log('Delete Person : ', id);
+        $http.delete(actionUrl + id).success(function () {
             load();
         });
     }
