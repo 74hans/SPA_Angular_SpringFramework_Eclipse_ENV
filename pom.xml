@@ -55,7 +55,6 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-jdbc</artifactId>
 			<version>${spring.version}</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- tomcat jdbc -->
@@ -63,7 +62,7 @@
 			<groupId>org.apache.tomcat</groupId>
 			<artifactId>tomcat-jdbc</artifactId>
 			<version>${tomcat.jdbc.version}</version>
-			<scope>provided</scope>
+			<!-- scope>provided</scope -->
 		</dependency>
 
 		<!-- mybatis -->
