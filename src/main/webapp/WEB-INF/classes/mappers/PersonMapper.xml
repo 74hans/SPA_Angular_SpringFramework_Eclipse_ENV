@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+$ mysql -u user1 -p DBName
+mysql> create table person(
+    -> id INT,
+    -> name VARCHAR(30));
+ -->
+
+<mapper namespace="com.mobiconsoft.dashboard.mapper.PersonMapper">
+ 
+    <resultMap id="person" type="com.mobiconsoft.dashboard.domain.Person" >
+        <result property="id" column="id"/>
+        <result property="name" column="name"/>
+    </resultMap>
+ 
+    <select id="getPersons" resultType="com.mobiconsoft.dashboard.domain.Person">
+        SELECT
+        *
+        FROM
+        person
+    </select>
+ 
+    <select id="getPerson" parameterType="Integer" resultType="com.mobiconsoft.dashboard.domain.Person">
+        SELECT
+        *
+        FROM
+        person
+        WHERE
+        id=#{id}
+    </select>
+ 
+    <insert id="savePerson" parameterType="com.mobiconsoft.dashboard.domain.Person"> <!-- useGeneratedKeys="true" keyProperty="id"> -->
+        INSERT INTO
+        person(id, name)
+        VALUES
+        (#{id}, #{name})
+    </insert>
+    
+    <update id="updatePerson" parameterType="com.mobiconsoft.dashboard.domain.Person"> 
+        UPDATE 
+        person 
+        SET
+        name=#{name}
+        WHERE
+        id=#{id} 
+    </update>
+ 
+    <delete id="deletePerson" parameterType="Integer">
+        DELETE FROM
+        person
+        WHERE
+        id=#{id}
+    </delete>
+ 
+</mapper>
