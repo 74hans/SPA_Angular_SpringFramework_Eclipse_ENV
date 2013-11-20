@@ -229,7 +229,7 @@ module.exports = function (grunt) {
             'bower_components/**/*',
             'images/{,*/}*.{gif,webp}',
             'styles/fonts/*',
-            'WEB-INF/*'
+            'WEB-INF/**/*'
           ]
         }, {
           expand: true,
