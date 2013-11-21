@@ -39,6 +39,18 @@ Advanced Examples
 *  [Blog about this usage](http://mobicon.tistory.com/380)
 
 
+Branch Dependencies
+-------------------
+feature_angular_post
+  <- feature_mybatis
+       <- feature_mybatis_mapper
+            <- feature_windows_ie8
+                 <- develop
+                      <- master
+
+final branch is master
+
+
 Author
 ------
 writtend by [Yun YoungSik](http://ysyun.github.io). My Blog is [Mobile Convergence](http://mobicon.tistory.com)
