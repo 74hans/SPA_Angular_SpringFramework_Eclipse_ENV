@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="styles/main.css">
         <!-- endbuild -->
 </head>
-  <body ng-app="SolarDasbhoardApp" ng-controller="MenuCtrl">
+  <body data-ng-app="SolarDasbhoardApp" data-ng-controller="MenuCtrl">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -39,20 +39,21 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li ng-class="activeWhen(path()=='/')"><a href="#/">Home</a></li>
-            <li ng-class="activeWhen(path()=='/resttest')"><a href="#/resttest">RESTTest</a></li>
+            <li data-ng-class="activeWhen(path()=='/')"><a href="#/">Home</a></li>
+            <li data-ng-class="activeWhen(path()=='/resttest')"><a href="#/resttest">RESTTest</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
     <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <div class="container" data-ng-view=""></div>
 
 
     <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/jquery-migrate/jquery-migrate.js"></script>
+    <script src="bower_components/jquery-migrate/jquery-migrate.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/respond/respond.min.js"></script>
 
         <!-- build:js scripts/plugins.js -->
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
