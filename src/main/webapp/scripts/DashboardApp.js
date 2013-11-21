@@ -21,3 +21,9 @@ DashboardApp.config(['$routeProvider', function ($routeProvider) {
         redirectTo: '/'
       });
   }]);
+
+DashboardApp.run(['$rootScope','$templateCache',function($rootScope, $templateCache) {
+  $rootScope.$on('$routeChangeStart', function() {
+     $templateCache.removeAll();
+  });
+}]);
