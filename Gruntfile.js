@@ -161,26 +161,6 @@ module.exports = function (grunt) {
         dirs: ['<%= yeoman.dist %>']
       }
     },
-    imagemin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.{png,jpg,jpeg}',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
-    svgmin: {
-      dist: {
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.app %>/images',
-          src: '{,*/}*.svg',
-          dest: '<%= yeoman.dist %>/images'
-        }]
-      }
-    },
     cssmin: {
       // By default, your `index.html` <!-- Usemin Block --> will take care of
       // minification. This option is pre-configured if you do not wish to use
@@ -259,8 +239,6 @@ module.exports = function (grunt) {
       dist: [
         'coffee',
         'copy:styles',
-        'imagemin',
-        'svgmin',
         'htmlmin'
       ]
     },
@@ -268,11 +246,6 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'karma.conf.js',
         singleRun: true
-      }
-    },
-    cdnify: {
-      dist: {
-        html: ['<%= yeoman.dist %>/*.html']
       }
     },
     ngmin: {
@@ -325,7 +298,6 @@ module.exports = function (grunt) {
     'autoprefixer',
     'concat',
     'copy:dist',
-    'cdnify',
     'ngmin',
     'cssmin',
     'uglify',

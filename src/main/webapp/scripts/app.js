@@ -5,7 +5,7 @@ angular.module('SolarDasbhoardApp', [
   'ngResource',
   'ngSanitize'
 ])
-  .config(function ($routeProvider) {
+  .config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -18,4 +18,4 @@ angular.module('SolarDasbhoardApp', [
       .otherwise({
         redirectTo: '/'
       });
-  });
+  }]);

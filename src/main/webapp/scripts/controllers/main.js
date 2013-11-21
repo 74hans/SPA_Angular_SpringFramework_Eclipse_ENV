@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('SolarDasbhoardApp')
-  .controller('MenuCtrl', function ($scope, $location) {
+  .controller('MenuCtrl', ['$scope', '$location', function ($scope, $location) {
    	$scope.activeWhen = function (value) {
     	return value ? 'active' : '';
     };
@@ -9,18 +9,14 @@ angular.module('SolarDasbhoardApp')
     $scope.path = function () {
        	return $location.url();
     };
-  })
-  .controller('MainCtrl', function ($scope) {
+  }])
+  .controller('MainCtrl', ['$scope', function ($scope) {
     
-  })
-  .controller('RestTestCtrl', function ($scope, $http) {
-  	$scope.number=1;
-  	$scope.no = function() {
-  		return $scope.number++;
-  	}
-
+  }])
+  .controller('RestTestCtrl', ['$scope', '$http', function ($scope, $http) {
+ 
     var actionUrl = 'api/v1/person/',
- 	load = function () {
+ 	  load = function () {
  				console.log('before calling...');
 
                 $http.get(actionUrl).success(function (data) {
@@ -45,11 +41,11 @@ angular.module('SolarDasbhoardApp')
         });
     };
 
-    $scope.delete = function(id) {
+    $scope.deletePerson = function(id) {
     	console.log('Delete Person : ', id);
-        $http.delete(actionUrl + id).success(function () {
+        $http['delete'](actionUrl + id).success(function () {
             load();
         });
-    }
+    };
 
-  });
+  }]);
