@@ -1,11 +1,13 @@
 'use strict';
 
-angular.module('SolarDasbhoardApp', [
+var DashboardApp = angular.module('DasbhoardApp', [
   'ngCookies',
   'ngResource',
-  'ngSanitize'
-])
-  .config(['$routeProvider', function ($routeProvider) {
+  'ngSanitize',
+  'DasbhoardApp.CommonCtrlMod'
+]);
+
+DashboardApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
