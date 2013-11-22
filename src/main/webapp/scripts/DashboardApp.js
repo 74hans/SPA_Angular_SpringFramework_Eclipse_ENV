@@ -1,6 +1,7 @@
 'use strict';
 
 var DashboardApp = angular.module('DasbhoardApp', [
+  'ngRoute',                                                  
   'ngCookies',
   'ngResource',
   'ngSanitize',
