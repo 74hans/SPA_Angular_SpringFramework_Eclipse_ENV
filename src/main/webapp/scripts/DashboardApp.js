@@ -11,11 +11,11 @@ DashboardApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        controller: 'CommonCtrlMod.mainCtrl'
       })
       .when('/resttest', {
         templateUrl: 'views/resttest.html',
-        controller: 'RestTestCtrl'
+        controller: 'CommonCtrlMod.restTestCtrl'
       })
       .otherwise({
         redirectTo: '/'

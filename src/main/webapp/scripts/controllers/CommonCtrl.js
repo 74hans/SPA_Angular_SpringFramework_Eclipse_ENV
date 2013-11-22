@@ -14,15 +14,15 @@ CommonCtrlMod.controller('CommonCtrlMod.menuCtrl', ['$scope', '$location', funct
 
     $scope.setRoute = function (url) {
         $location.path(url);
-    }    
+    };    
 
   }]);
 
-CommonCtrlMod.controller('MainCtrl', ['$scope', function ($scope) {
+CommonCtrlMod.controller('CommonCtrlMod.mainCtrl', ['$scope', function ($scope) {
     
   }]);
 
-CommonCtrlMod.controller('RestTestCtrl', ['$scope', '$http', function ($scope, $http) {
+CommonCtrlMod.controller('CommonCtrlMod.restTestCtrl', ['$scope', '$http', function ($scope, $http) {
 
     var actionUrl = 'api/v1/person/',
  	  load = function () {
