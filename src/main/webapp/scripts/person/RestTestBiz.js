@@ -1,28 +1,8 @@
 'use strict';
 
-var CommonCtrlMod = angular.module('DasbhoardApp.CommonCtrlMod', []);
+var RestTestBiz = angular.module('DasbhoardApp.RestTestBiz', []);
 
-CommonCtrlMod.controller('CommonCtrlMod.menuCtrl', ['$scope', '$location', function ($scope, $location) {
-
-	$scope.activeWhen = function (value) {
-    	return value ? 'active' : '';
-    };
-
-    $scope.path = function () {
-       	return $location.url();
-    };
-
-    $scope.setRoute = function (url) {
-        $location.path(url);
-    };    
-
-  }]);
-
-CommonCtrlMod.controller('CommonCtrlMod.mainCtrl', ['$scope', function ($scope) {
-    
-  }]);
-
-CommonCtrlMod.controller('CommonCtrlMod.restTestCtrl', ['$scope', '$http', function ($scope, $http) {
+RestTestBiz.controller('RestTestBiz.personCtrl', ['$scope', '$http', function ($scope, $http) {
 
     var actionUrl = 'api/v1/person/',
  	  load = function () {

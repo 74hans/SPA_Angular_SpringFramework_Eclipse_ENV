@@ -5,26 +5,26 @@ var DashboardApp = angular.module('DasbhoardApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'DasbhoardApp.CommonCtrlMod'
+  'DasbhoardApp.CommonCtrl',
+  'DasbhoardApp.RestTestBiz',
 ]);
 
 DashboardApp.config(['$routeProvider', function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'CommonCtrlMod.mainCtrl'
+        templateUrl: 'views/main.html'
       })
       .when('/resttest', {
-        templateUrl: 'views/resttest.html',
-        controller: 'CommonCtrlMod.restTestCtrl'
+        templateUrl: 'views/restTest.html',
+        controller: 'RestTestBiz.personCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
   }]);
 
-DashboardApp.run(['$rootScope','$templateCache',function($rootScope, $templateCache) {
-  $rootScope.$on('$routeChangeStart', function() {
-     $templateCache.removeAll();
-  });
-}]);
+//DashboardApp.run(['$rootScope','$templateCache',function($rootScope, $templateCache) {
+//  $rootScope.$on('$routeChangeStart', function() {
+//     $templateCache.removeAll();
+//  });
+//}]);
