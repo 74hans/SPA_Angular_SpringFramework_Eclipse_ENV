@@ -7,6 +7,7 @@ var DashboardApp = angular.module('DasbhoardApp', [
   'ngSanitize',
   'DasbhoardApp.CommonCtrl',
   'DasbhoardApp.RestTestBiz',
+  'DasbhoardApp.RestfulSvc'
 ]);
 
 DashboardApp.config(['$routeProvider', function ($routeProvider) {
