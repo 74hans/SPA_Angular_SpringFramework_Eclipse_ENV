@@ -7,14 +7,14 @@
             <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
-    <logger name="com.mobiconsoft" level="${logback.loglevel}"/>
+    <!-- <logger name="com.mobiconsoft" level="${logback.loglevel}"/> -->
+    <logger name="com.mobiconsoft" level="INFO"/>
     <logger name="ch.qos.logback" level="WARN"/>
     <logger name="com.codahale.metrics" level="WARN"/>
     <logger name="com.ryantenney" level="WARN"/>
     <logger name="net.sf.ehcache" level="WARN"/>
     <logger name="org.apache" level="WARN"/>
-    <logger name="org.hibernate.validator" level="WARN"/>
-    <logger name="org.hibernate" level="WARN"/>
+    <logger name="org.mybatis.spring" level="WARN"/>
     <logger name="org.springframework" level="WARN"/>
     <logger name="org.springframework.web" level="WARN"/>
     <logger name="org.springframework.security" level="WARN"/>

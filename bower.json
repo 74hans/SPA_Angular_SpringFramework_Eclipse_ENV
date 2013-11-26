@@ -13,7 +13,8 @@
     "angular-resource": "~1.2.1",
     "angular-cookies": "~1.2.1",
     "angular-sanitize": "~1.2.1",
-    "modernizr": "~2.7.0"
+    "modernizr": "~2.7.0",
+    "console-shim": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.2.1",
