@@ -16,6 +16,8 @@
 
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="bower_components/jqgrid/css/ui.jqgrid.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     
@@ -51,6 +53,9 @@
             <li data-ng-class="activeWhen(path()=='/resttest')">
               <a href="" data-ng-click="setRoute('/resttest')">RESTTest</a>
             </li>
+            <li data-ng-class="activeWhen(path()=='/jqgridtest')">
+              <a href="" data-ng-click="setRoute('/jqgridtest')">jqGridTest</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -59,26 +64,34 @@
     <!-- Add your site or application content here -->
     <div class="container" data-ng-view=""></div>
 
-	<!-- build:js scripts/core.js -->
+	<!-- build:js scripts/core-1.js -->
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/jquery-migrate/jquery-migrate.min.js"></script>
+	<!-- endbuild -->
+	
+    <!-- build:js scripts/plugins-2.js -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  	<script src="bower_components/respond/respond.src.js"></script>
+  	<script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+  	<script src="bower_components/jqgrid/js/i18n/grid.locale-en.js"></script>
+  	<script src="bower_components/jqgrid/js/jquery.jqGrid.js"></script>
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/angular-3.js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 	<!-- endbuild -->
-	
-    <!-- build:js scripts/plugins.js -->
-    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  	<script src="bower_components/respond/respond.src.js"></script>
-    <!-- endbuild -->
 
-    <!-- build:js scripts/dashboard-spa.js -->
+    <!-- build:js scripts/dashboard-4.js -->
     <script src="scripts/DashboardApp.js"></script>
     <script src="scripts/common/controllers/CommonCtrl.js"></script>
+    <script src="scripts/common/directives/JqGridDrtv.js"></script>
     <script src="scripts/common/services/RestfulSvc.js"></script>
     <script src="scripts/person/RestTestBiz.js"></script>
+    <script src="scripts/sales/JqGridBiz.js"></script>
     <!-- endbuild -->
     
 </body>
