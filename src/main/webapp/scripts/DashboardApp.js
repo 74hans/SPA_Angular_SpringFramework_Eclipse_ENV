@@ -6,7 +6,9 @@ var DashboardApp = angular.module('DasbhoardApp', [
   'ngResource',
   'ngSanitize',
   'DasbhoardApp.CommonCtrl',
+  'DashboardApp.JqGridDrtv',
   'DasbhoardApp.RestTestBiz',
+  'DasbhoardApp.JqGridBiz',
   'DasbhoardApp.RestfulSvc'
 ]);
 
@@ -18,6 +20,10 @@ DashboardApp.config(['$routeProvider', function ($routeProvider) {
       .when('/resttest', {
         templateUrl: 'views/restTest.html',
         controller: 'RestTestBiz.personCtrl'
+      })
+      .when('/jqgridtest', {
+        templateUrl: 'views/jqGridTest.html',
+        controller: 'JqGridBiz.salesCtrl'
       })
       .otherwise({
         redirectTo: '/'
