@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 
+id : primary key
+$ mysql -u user1 -p DBName
+mysql> CREATE TABLE mc_component(
+      id MEDIUMINT NOT NULL AUTO_INCREMENT,
+      comp_type VARCHAR(5) NOT NULL,
+      comp_cfg TEXT NOT NULL,
+      PRIMARY KEY (id) 
+    );
+ -->
+
+<mapper namespace="com.mobiconsoft.dashboard.mapper.ComponentMapper">
+ 
+    <resultMap id="component" type="com.mobiconsoft.dashboard.domain.Component" >
+        <result property="id" column="id"/>
+        <result property="compType" column="comp_type"/>
+        <result property="compCfg" column="comp_cfg"/>
+    </resultMap>
+ 
+    <select id="getComponents" resultType="com.mobiconsoft.dashboard.domain.Component">
+        SELECT
+        *
+        FROM
+        component
+    </select>
+ 
+    <select id="getComponent" parameterType="Integer" resultType="com.mobiconsoft.dashboard.domain.Component">
+        SELECT
+        *
+        FROM
+        component
+        WHERE
+        id=#{id}
+    </select>
+ 
+    <insert id="saveComponent" parameterType="com.mobiconsoft.dashboard.domain.Component"> <!-- useGeneratedKeys="true" keyProperty="id"> -->
+        INSERT INTO
+        component(comp_type, comp_cfg)
+        VALUES
+        (#{compType}, #{compCfg})
+    </insert>
+    
+    <update id="updateComponent" parameterType="com.mobiconsoft.dashboard.domain.Component"> 
+        UPDATE 
+        component
+        SET
+        comp_type=#{compType}, 
+        comp_cfg=#{compCfg}
+        WHERE
+        id=#{id} 
+    </update>
+ 
+    <delete id="deleteComponent" parameterType="Integer">
+        DELETE FROM
+        component
+        WHERE
+        id=#{id}
+    </delete>
+ 
+</mapper>

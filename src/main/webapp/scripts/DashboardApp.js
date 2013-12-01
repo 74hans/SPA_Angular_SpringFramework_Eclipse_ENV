@@ -6,6 +6,7 @@ var DashboardApp = angular.module('DasbhoardApp', [
   'ngResource',
   'ngSanitize',
   'DasbhoardApp.CommonCtrl',
+  'DasbhoardApp.MCAdminCtrl',
   'DashboardApp.JqGridDrtv',
   'DasbhoardApp.RestTestBiz',
   'DasbhoardApp.JqGridBiz',
@@ -24,6 +25,10 @@ DashboardApp.config(['$routeProvider', function ($routeProvider) {
       .when('/jqgridtest', {
         templateUrl: 'views/jqGridTest.html',
         controller: 'JqGridBiz.salesCtrl'
+      })
+      .when('/mc-component', {
+        templateUrl: 'views/mc/component.html',
+        controller: 'MCAdminCtrl.componentCtrl'
       })
       .otherwise({
         redirectTo: '/'

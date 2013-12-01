@@ -5,14 +5,9 @@ body {
     padding-top: 50px;
 }
 
-#resttest{
+.mc-off-body{
     padding-top: 20px
 }
-
-#gridtest{
-    padding-top: 20px
-}
-
 
 /* jqgrid with twitter bootstrap */
 .ui-jqgrid-btable{
