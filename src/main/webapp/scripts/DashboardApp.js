@@ -1,7 +1,9 @@
 'use strict';
 
 var DashboardApp = angular.module('DasbhoardApp', [
-  'ngRoute',                                                  
+  'ngRoute', 
+  'ui.router',
+  'ngAnimate',
   'ngCookies',
   'ngResource',
   'ngSanitize',
@@ -13,26 +15,41 @@ var DashboardApp = angular.module('DasbhoardApp', [
   'DasbhoardApp.RestfulSvc'
 ]);
 
-DashboardApp.config(['$routeProvider', function ($routeProvider) {
-    $routeProvider
-      .when('/', {
+DashboardApp.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+
+	$urlRouterProvider.otherwise("/main");
+	
+	$stateProvider
+      .state('main', {
+      	url: '/main',
         templateUrl: 'views/main.html'
       })
-      .when('/resttest', {
+      .state('resttest', {
+      	url: '/resttest',
         templateUrl: 'views/restTest.html',
         controller: 'RestTestBiz.personCtrl'
       })
-      .when('/jqgridtest', {
+      .state('jqgridtest', {
+      	url: '/jqgridtest',
         templateUrl: 'views/jqGridTest.html',
         controller: 'JqGridBiz.salesCtrl'
       })
-      .when('/mc-component', {
+      .state('mc-component', {
+      	url: '/mc-component',
         templateUrl: 'views/mc/component.html',
         controller: 'MCAdminCtrl.componentCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
+  }]);
+
+DashboardApp.run(['$rootScope', '$state', '$stateParams',
+    function ($rootScope,   $state,   $stateParams) {
+
+      // It's very handy to add references to $state and $stateParams to the $rootScope
+      // so that you can access them from any scope within your applications.For example,
+      // <li ng-class="{ active: $state.includes('contacts.list') }"> will set the <li>
+      // to active whenever 'contacts.list' or one of its decendents is active.
+      $rootScope.$state = $state;
+      $rootScope.$stateParams = $stateParams;
   }]);
 
 //DashboardApp.run(['$rootScope','$templateCache',function($rootScope, $templateCache) {
