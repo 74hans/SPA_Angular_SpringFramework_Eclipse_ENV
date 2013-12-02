@@ -8,7 +8,8 @@ var DashboardApp = angular.module('DasbhoardApp', [
   'ngResource',
   'ngSanitize',
   'DasbhoardApp.CommonCtrl',
-  'DasbhoardApp.MCAdminCtrl',
+  'MobiConSoft.ComponentCtrl',
+  'MobiConSoft.ComponentSvc',
   'DashboardApp.JqGridDrtv',
   'DasbhoardApp.RestTestBiz',
   'DasbhoardApp.JqGridBiz',
@@ -35,9 +36,15 @@ DashboardApp.config(['$stateProvider', '$urlRouterProvider', function ($statePro
         controller: 'JqGridBiz.salesCtrl'
       })
       .state('mc-component', {
+//      	abstract: true, 
       	url: '/mc-component',
         templateUrl: 'views/mc/component.html',
-        controller: 'MCAdminCtrl.componentCtrl'
+        controller: 'ComponentCtrl.componentCtrl'
+      })
+      .state('mc-component.detail', {
+      	url: '/mc-component.detail/{componentId:[0-9]{1,4}}',
+        templateUrl: 'views/mc/component.detail.html',
+        controller: 'ComponentCtrl.componentDetailCtrl'
       });
   }]);
 

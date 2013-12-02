@@ -1,19 +1,26 @@
-  <div class="container mc-off-body">
+<div class="row">
 
-      <div class="row row-offcanvas row-offcanvas-right">
+    <div class="col-md-3">
+      <ul class="nav nav-list">
+        <li ng-class="{ active: $state.includes('components.create') }"><a ui-sref="components.create">Create Component</a></li>
+        <li class="nav-header">Top Contacts</li>
 
-        <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-          hi
-        </div><!--/span-->
-        
-        <div class="col-xs-12 col-sm-9">
-          <div class="row">
-            <div class="col-6 col-sm-6 col-lg-4">
-              <h2>title</h2>
-            </div>
-          </div>
-        </div><!--/span-->
+        <!-- This <li> will only add the 'active' class if 'contacts.detail' or its descendants are active
+             AND if it is the link for the active contact (aka contactId) -->
+        <li ng-repeat="component in components"
+            ng-class="{ active: $state.includes('components.detail') && $stateParams.componentId == component.id }">
+{{component.id}}
+          <!-- Here's a ui-sref that is also providing necessary parameters -->
+          <a ui-sref="components.detail/{componentId:component.id}">{{component.name}}</a>
+        </li>
+      </ul>
+      <hr>
+    </div>
 
-      </div><!--/row-->
-      
-    </div><!--/.container-->
+
+  <!-- Our unnamed main ui-view for this template -->
+  <div class="col-md-9">
+    content
+  	<div ui-view ng-animate="{enter:'fade-enter'}"></div>
+  </div>
+</div>

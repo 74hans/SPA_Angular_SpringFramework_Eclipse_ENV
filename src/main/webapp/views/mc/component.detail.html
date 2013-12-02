@@ -1,0 +1,13 @@
+<div>
+  <h2>{{component.name}}</h2>
+  <ul>
+	<li>
+      <a ui-sref="components.update({componentId:component.id})">{{component.name}} ({{component.type}})</a>
+    </li>
+  </ul>
+  <div ui-view ng-animate="{enter:'fade-enter'}">
+    <!-- Example of default content. This content will be replace as soon as
+         this ui-view is populate with a template -->
+    <small class="muted">Click on a contact item to view and/or edit it.</small>
+  </div>
+</div>

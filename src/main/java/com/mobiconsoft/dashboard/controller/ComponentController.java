@@ -37,7 +37,7 @@ public class ComponentController {
 	@ResponseBody
 	public Component getById(@PathVariable Integer id) {
 		Component component = this.componentService.getById(id);
-		logger.info("Select one call: "+ component.getId() + ", " + component.getCompType());
+		logger.info("Select one call: "+ component);
 		return component;
 	}
 
@@ -47,14 +47,14 @@ public class ComponentController {
 	@RequestMapping(value = "/component", method = RequestMethod.POST)
 	@ResponseBody
 	public Component saveComponent(@RequestBody Component component) {
-		logger.info("Save call: "+ component.getId() + ", " + component.getCompType());
+		logger.info("Save call: "+ component);
 		return this.componentService.save(component);
 	}
 	
 	@RequestMapping(value = "/component", method = RequestMethod.PUT)
 	@ResponseBody
 	public Component updateComponent(@RequestBody Component component) {
-		logger.info("Update call: "+ component.getId() + ", " + component.getCompType());
+		logger.info("Update call: "+ component);
 		return this.componentService.update(component);
 	}
 	

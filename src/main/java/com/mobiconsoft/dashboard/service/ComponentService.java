@@ -23,7 +23,7 @@ public class ComponentService{
 
 	@Transactional
 	public Component save(Component component) {
-		ComponentMapper.saveComponent(component);
+	  ComponentMapper.saveComponent(component);
 		return component;
 	}
 	

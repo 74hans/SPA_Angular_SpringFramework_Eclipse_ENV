@@ -7,8 +7,9 @@ public class Component implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	private int id;
-	private String compType;
-	private String compCfg;
+	private String name;
+	private String type;
+	private String cfg;
 	
 	public int getId() {
 		return id;
@@ -16,18 +17,25 @@ public class Component implements Serializable {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getCompType() {
-		return compType;
+	public String getName() {
+		return name;
 	}
-	public void setCompType(String compType) {
-		this.compType = compType;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getCompCfg() {
-		return compCfg;
+	public String getType() {
+		return type;
 	}
-	public void setCompCfg(String compCfg) {
-		this.compCfg = compCfg;
+	public void setType(String type) {
+		this.type = type;
 	}
-
-
+	public String getCfg() {
+		return cfg;
+	}
+	public void setCfg(String cfg) {
+		this.cfg = cfg;
+	}
+	public String toString() {
+		return this.id + "," + this.name + ", " + this.type;
+	}
 }
