@@ -8,8 +8,7 @@ var DashboardApp = angular.module('DasbhoardApp', [
   'ngResource',
   'ngSanitize',
   'DasbhoardApp.CommonCtrl',
-  'MobiConSoft.ComponentCtrl',
-  'MobiConSoft.ComponentSvc',
+  'MobiConSoft.ComponentMod',
   'DashboardApp.JqGridDrtv',
   'DasbhoardApp.RestTestBiz',
   'DasbhoardApp.JqGridBiz',
@@ -36,16 +35,20 @@ DashboardApp.config(['$stateProvider', '$urlRouterProvider', function ($statePro
         controller: 'JqGridBiz.salesCtrl'
       })
       .state('mc-component', {
-//      	abstract: true, 
       	url: '/mc-component',
         templateUrl: 'views/mc/component.html',
-        controller: 'ComponentCtrl.componentCtrl'
+        controller: 'ComponentMod.componentCtrl'
       })
-      .state('mc-component.detail', {
-      	url: '/mc-component.detail/{componentId:[0-9]{1,4}}',
-        templateUrl: 'views/mc/component.detail.html',
-        controller: 'ComponentCtrl.componentDetailCtrl'
-      });
+	      .state('mc-component.detail', {
+	      	url: '/detail/{componentId:[0-9]{1,4}}',
+	        templateUrl: 'views/mc/component.detail.html',
+	        controller: 'ComponentMod.componentDetailCtrl'
+	      })
+	      .state('mc-component.create', {
+	      	url: '/create',
+	        templateUrl: 'views/mc/component.create.html',
+	        controller: 'ComponentMod.componentCreateCtrl'
+	      });
   }]);
 
 DashboardApp.run(['$rootScope', '$state', '$stateParams',
