@@ -1,5 +1,6 @@
 'use strict';
-var jqGridDrtv = angular.module('DashboardApp.JqGridDrtv', [ 'DasbhoardApp.RestfulSvc' ]);
+var jqGridDrtv = angular.module('DashboardApp.JqGridDrtv',
+		[ 'DasbhoardApp.RestfulSvc' ]);
 
 /**
  * mc is Mobile Convergence of MobiConSoft
@@ -20,11 +21,9 @@ jqGridDrtv.directive('mcJqGrid', [ 'RestfulSvcApi', function(RestfulSvcApi) {
 
 			scope.$watch('config', function(newValue) {
 				element.children().empty();
-				table = angular.element('<table></table>');
+				table = angular.element('<table id="dashboardGrid"></table>');
 				element.append(table);
 				$(table).jqGrid(newValue);
-				//console.log(table); table is jquery object
-				//console.log($(table)); $(table) is jquery selector object
 			});
 
 			scope.$watch('data', function(newValue, oldValue) {
