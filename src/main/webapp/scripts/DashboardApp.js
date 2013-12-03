@@ -42,12 +42,12 @@ DashboardApp.config(['$stateProvider', '$urlRouterProvider', function ($statePro
 	      .state('mc-component.detail', {
 	      	url: '/detail/{componentId:[0-9]{1,4}}',
 	        templateUrl: 'views/mc/component.detail.html',
-	        controller: 'ComponentMod.componentDetailCtrl'
+	        controller: 'ComponentMod.componentCtrl'
 	      })
 	      .state('mc-component.create', {
 	      	url: '/create',
 	        templateUrl: 'views/mc/component.create.html',
-	        controller: 'ComponentMod.componentCreateCtrl'
+	        controller: 'ComponentMod.componentCtrl'
 	      });
   }]);
 
