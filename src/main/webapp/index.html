@@ -63,7 +63,11 @@
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li data-ng-class="activeWhen(path()=='/')">
+            <li data-ng-class="{ active: $state.includes('main') }"><a ui-sref="main">Home</a></li>
+            <li data-ng-class="{ active: $state.includes('resttest') }"><a ui-sref="resttest">RESTTest</a></li>
+            <li data-ng-class="{ active: $state.includes('jqgridtest') }"><a ui-sref="jqgridtest">jqGridTest</a></li>
+            
+            <!-- <li data-ng-class="activeWhen(path()=='/')">
               <a href="" data-ng-click="setRoute('/')">Home</a>
             </li>
             <li data-ng-class="activeWhen(path()=='/resttest')">
@@ -71,14 +75,32 @@
             </li>
             <li data-ng-class="activeWhen(path()=='/jqgridtest')">
               <a href="" data-ng-click="setRoute('/jqgridtest')">jqGridTest</a>
-            </li>
+            </li> -->
+            <li class="dropdown">
+	            <a href="" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+	            <ul class="dropdown-menu">
+	              <li class="dropdown-header">Project</li>
+	              <li><a href="">User</a></li>
+	              <li><a href="">Customer</a></li>
+	              <li><a href="">Code</a></li>
+	              <li><a href="">Role</a></li>
+	              <li class="divider"></li>
+	              <li class="dropdown-header">MobiconSoft</li>
+	              <!-- <li data-ng-class="activeWhen(path()=='/mc-component')">
+              		<a href="" data-ng-click="setRoute('/mc-component')">Component</a>
+            	  </li> -->
+            	  <li data-ng-class="{ active: $state.includes('mc-component') }"><a ui-sref="mc-component">Component</a></li>
+	              <li><a href="">Dashboard</a></li>
+	            </ul>
+	        </li>
           </ul>
         </div>
       </div>
     </div>
 
     <!-- Add your site or application content here -->
-    <div class="container" data-ng-view=""></div>
+    <!-- <div class="container" data-ng-view=""></div> -->
+    <div ui-view class="container" style="margin-top:30px"></div>
 
 	<!-- build:js scripts/core-1.js -->
     <script src="bower_components/jquery/jquery.js"></script>
@@ -87,7 +109,7 @@
 	
     <!-- build:js scripts/plugins-2.js -->
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  	<script src="bower_components/respond/respond.src.js"></script>
+  	<script src="bower_components/respond/dest/respond.src.js"></script>
   	<script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
   	<script src="bower_components/jqgrid/js/i18n/grid.locale-en.js"></script>
   	<script src="bower_components/jqgrid/js/jquery.jqGrid.js"></script>
@@ -96,6 +118,8 @@
     <!-- build:js scripts/angular-3.js -->
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
@@ -104,6 +128,7 @@
     <!-- build:js scripts/dashboard-4.js -->
     <script src="scripts/DashboardApp.js"></script>
     <script src="scripts/common/controllers/CommonCtrl.js"></script>
+    <script src="scripts/mc/ComponentMod.js"></script>
     <script src="scripts/common/directives/JqGridDrtv.js"></script>
     <script src="scripts/common/services/RestfulSvc.js"></script>
     <script src="scripts/person/RestTestBiz.js"></script>
